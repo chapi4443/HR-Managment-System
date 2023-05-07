@@ -1,0 +1,67 @@
+<div fxLayout="row">
+  <div fxFlex="93">
+    <h2>Department Form</h2>
+  </div>
+
+  <div fxFlex>
+    <button mat-raised-button [mat-dialog-close]="false" color="warn">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div fxLayout="row" class="p-3 mt-1" fxLayoutGap="7px">
+  <mat-card fxFlex class="">
+    <form [formGroup]="formGroup" autocomplete="off">
+      <div fxLayout="row wrap" fxLayoutGap="2em">
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            type="text"
+            id="name"
+            formControlName="name"
+            required
+          />
+          <mat-error *ngIf="name?.hasError('required')">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="2em">
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Company</mat-label>
+           <mat-select
+            matInput
+            name="companyId"
+            formControlName="companyId"
+            required
+          >
+            <mat-option>---select---</mat-option>
+            <mat-option *ngFor="let item of companies" [value]="item.id">
+              {{ item.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="companyId?.hasError('required')">
+            Company is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <mat-card-actions align="end">
+        <div fxLayout="row" layout-align="start center">
+          <button mat-raised-button color="warn" (click)="clear()">
+            Clear
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!formGroup.valid"
+            (click)="save()"
+          >
+            <mat-label> Save </mat-label>
+          </button>
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

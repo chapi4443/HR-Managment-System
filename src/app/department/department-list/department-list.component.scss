@@ -1,0 +1,45 @@
+.hide {
+  display: none;
+  align-items: center;
+}
+mat-card-title {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+mat-table {
+  width: 100%;
+}
+mat-header-cell {
+  display: flex;
+  justify-content: left;
+  background-color: #f4f4f4;
+  color: #0b0b0b;
+  height: 70px;
+}
+mat-cell {
+display: flex !important;
+justify-content: left !important; // or flex-end
+}
+mat-footer-row {
+font-weight: bold;
+}
+mat-footer-row mat-footer-cell {
+justify-content: center;
+font-style: italic;
+}
+.element-row {
+  position: relative;
+}
+.element-row:not(.expanded) {
+  cursor: pointer;
+}
+
+.element-row:not(.expanded):hover {
+  background: #d2ebff;
+}
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+

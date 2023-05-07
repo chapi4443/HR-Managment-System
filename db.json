@@ -1,0 +1,179 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "candidates": [
+    {
+      "id": 1,
+      "name": "yene bal",
+      "email": "john.doe@example.com",
+      "phone": "555-555-5555",
+      "address": "123 Main St"
+    },
+    {
+      "id": 2,
+      "name": "Si Smith",
+      "email": "jane.smith@example.com",
+      "phone": "555-555-5555",
+      "address": "123 Main St"
+    },
+    {
+      "id": 4,
+      "name": "Hayfa Hayes",
+      "email": "homugobasy@mailinator.com",
+      "phone": "+1 (379) 926-5699",
+      "address": "Ullamco omnis eu mol"
+    },
+    {
+      "id": 5,
+      "name": "siyam m",
+      "email": "manomofik@mailinator.com",
+      "phone": "+1 (294) 777-2455",
+      "address": "Sunt ex enim id dign"
+    },
+    {
+      "id": 6,
+      "name": "yee alem",
+      "email": "dery@mailinator.com",
+      "phone": "+1 (866) 733-1488",
+      "address": "Exercitation ea dolo"
+    },
+    {
+      "id": 7,
+      "name": "Kalia Whitaker",
+      "email": "rage@mailinator.com",
+      "phone": "+1 (606) 584-8537",
+      "address": "Dolor esse neque re"
+    },
+    {
+      "id": 8,
+      "name": "Whilemina Schwartz",
+      "email": "suzokuq@mailinator.com",
+      "phone": "+1 (724) 575-4303",
+      "address": "Provident suscipit "
+    },
+    {
+      "id": 9,
+      "name": "Aidan Hardin",
+      "email": "baruwuka@mailinator.com",
+      "phone": "+1 (963) 597-3585",
+      "address": "Doloremque elit num"
+    },
+    {
+      "id": 10,
+      "name": "Kelsie Hood",
+      "email": "jytapyt@mailinator.com",
+      "phone": "+1 (966) 906-3478",
+      "address": "Ipsa necessitatibus"
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "Acme Corporation",
+      "address": "789 Elm St",
+      "phone": "555-555-5555"
+    },
+    {
+      "id": 2,
+      "name": "Widget Co",
+      "address": "321 Maple Ave",
+      "phone": "555-555-5555"
+    },
+    {
+      "id": 3,
+      "name": "Haviva Page",
+      "phone": "+1 (779) 138-7128",
+      "address": "Excepturi do dolorum"
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Sales",
+      "companyId": 1
+    },
+    {
+      "id": 2,
+      "name": "Marketing",
+      "companyId": 1
+    },
+    {
+      "id": 3,
+      "name": "Engineering",
+      "companyId": 2
+    },
+    {
+      "id": 4,
+      "name": "Finance",
+      "companyId": 2
+    },
+    {
+      "id": 5,
+      "companyId": 3,
+      "name": "Nevada Mejia"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Bob Johnson",
+      "email": "bob.johnson@example.com",
+      "phone": "555-555-5555",
+      "address": "987 Pine St",
+      "companyId": 1
+    },
+    {
+      "id": 2,
+      "name": "Alice Lee",
+      "email": "alice.lee@example.com",
+      "phone": "555-555-5555",
+      "address": "654 Cedar Ln",
+      "companyId": 2
+    },
+    {
+      "id": 3,
+      "companyId": 1,
+      "name": "Mara Hoover",
+      "email": "kufobahe@mailinator.com",
+      "phone": "+1 (521) 617-7836",
+      "address": "Distinctio Sed ea c"
+    }
+  ],
+  "salaries": [
+    {
+      "id": 1,
+      "amount": 50000,
+      "employeeId": 1
+    },
+    {
+      "id": 2,
+      "amount": 75000,
+      "employeeId": 2
+    },
+    {
+      "id": 3,
+      "employeeId": 2,
+      "amount": "54666"
+    },
+    {
+      "id": 4,
+      "employeeId": 3,
+      "amount": "Est et eveniet quas"
+    }
+  ]
+}

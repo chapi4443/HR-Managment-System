@@ -1,0 +1,121 @@
+<div fxLayout="row" class="p-2 mt-3">
+  <mat-card fxFlex="100">
+    <div fxlayout="row wrap" fxlayoutgap="2em">
+      <mat-form-field fxFlex>
+        <mat-label>Filter</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Search"
+          #input
+        />
+      </mat-form-field>
+
+      <mat-card-title fxFlex>
+        <button
+          color="primary"
+          mat-raised-button
+          type="button"
+          (click)="openAddForm()"
+        >
+          <i class="material-icons" style="margin-left: -5px">add_box</i> Add
+          Salary
+        </button>
+      </mat-card-title>
+    </div>
+    <div>
+      <mat-table
+        class="mat-elevation-z8"
+        [dataSource]="dataSource"
+        matSort
+        matSortStart="desc"
+      >
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >ID</mat-header-cell
+          >
+          <mat-cell *matCellDef="let data">
+            {{ data?.id }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="amount">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Amount</mat-header-cell
+          >
+          <mat-cell *matCellDef="let data">
+            {{ data?.amount }}
+          </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="employeeName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Employee Name</mat-header-cell
+          >
+          <mat-cell *matCellDef="let data">
+            {{ data?.employee?.name }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button
+              (click)="delete(element.id)"
+              mat-icon-button
+              color="primary"
+            >
+              <mat-icon color="warn">delete</mat-icon>
+            </button>
+            <button
+              (click)="openEditForm(element)"
+              mat-icon-button
+              color="primary"
+            >
+              <mat-icon color="primary">edit</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="loading">
+          <mat-footer-cell *matFooterCellDef colspan="9">
+            Loading
+          </mat-footer-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="noData">
+          <mat-footer-cell *matFooterCellDef colspan="9">
+            No Data
+          </mat-footer-cell>
+        </ng-container>
+
+        <mat-header-row
+          *matHeaderRowDef="displayedColumns"
+          role="row"
+          class="mat-header-row"
+        ></mat-header-row>
+        <mat-row
+          *matRowDef="let row; columns: displayedColumns"
+          class="element-row"
+        ></mat-row>
+        <mat-footer-row
+          *matFooterRowDef="['loading']"
+          [ngClass]="{ hide: dataSource != null }"
+        ></mat-footer-row>
+
+        <mat-footer-row
+          *matFooterRowDef="['noData']"
+          [ngClass]="{
+            hide: !(dataSource != null && dataSource.data.length == 0)
+          }"
+        ></mat-footer-row>
+      </mat-table>
+      <mat-paginator
+        #paginator
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
+  </mat-card>
+</div>

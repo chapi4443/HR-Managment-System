@@ -1,0 +1,13 @@
+mat-toolbar {
+  height: 64px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f5f5f5;
+}
