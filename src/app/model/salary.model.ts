@@ -4,5 +4,5 @@ export class Salary {
     id!: number;
     amount: number;
     employeeId!:number;
-    employee: Employee;
+    employee?: Employee;
 }

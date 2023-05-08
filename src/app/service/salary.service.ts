@@ -11,8 +11,14 @@ export class SalaryService {
 
   constructor(private http: HttpClient) {}
 
+  // getSalaries(): Observable<Salary[]> {
+  //   return this.http.get<Salary[]>(this.salariesUrl);
+  // }
+  
   getSalaries(): Observable<Salary[]> {
-    return this.http.get<Salary[]>(this.salariesUrl);
+    return this.http.get<Salary[]>(this.salariesUrl, {
+      params: { _expand: 'employee' },
+    });
   }
 
   getSalary(id: number): Observable<Salary> {
@@ -24,7 +30,7 @@ export class SalaryService {
     return this.http.post<Salary>(this.salariesUrl, salary);
   }
 
-  updateSalary(id: number,salary: Salary): Observable<any> {
+  updateSalary(id: number, salary: Salary): Observable<any> {
     const url = `${this.salariesUrl}/${salary.id}`;
     return this.http.put(url, salary);
   }

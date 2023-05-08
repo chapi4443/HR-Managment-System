@@ -14,7 +14,7 @@ import { SalaryAddComponent } from '../salary-add/salary-add.component';
   styleUrls: ['./salery-list.component.scss'],
 })
 export class SaleryListComponent {
-  displayedColumns: string[] = ['id', 'employeeName','amount', 'actions'];
+  displayedColumns: string[] = ['no', 'employeeName','amount', 'actions'];
   dataSource!: MatTableDataSource<Salary>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

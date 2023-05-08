@@ -11,8 +11,13 @@ export class DepartmentService {
 
   constructor(private http: HttpClient) {}
 
+  // getDepartments(): Observable<Department[]> {
+  //   return this.http.get<Department[]>(this.departmentsUrl);
+  // }
   getDepartments(): Observable<Department[]> {
-    return this.http.get<Department[]>(this.departmentsUrl);
+    return this.http.get<Department[]>(this.departmentsUrl, {
+      params: { _expand: 'company' },
+    });
   }
 
   getDepartment(id: number): Observable<Department> {
@@ -24,7 +29,7 @@ export class DepartmentService {
     return this.http.post<Department>(this.departmentsUrl, department);
   }
 
-  updateDepartment(id: number,department: Department): Observable<any> {
+  updateDepartment(id: number, department: Department): Observable<any> {
     const url = `${this.departmentsUrl}/${department.id}`;
     return this.http.put(url, Department);
   }

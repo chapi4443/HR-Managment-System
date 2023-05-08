@@ -4,5 +4,5 @@ export class Department {
     id!: number;
     name!: string;
     companyId!:number;
-    company: Company;
+    company?: Company;
 }

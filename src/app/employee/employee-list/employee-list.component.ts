@@ -15,8 +15,9 @@ import { EmployeeAddComponent } from '../employee-add/employee-add.component';
 })
 export class EmployeeListComponent {
   displayedColumns: string[] = [
-    'id',
+    'no',
     'name',
+    'companyName',
     'email',
     'phone',
     'address',

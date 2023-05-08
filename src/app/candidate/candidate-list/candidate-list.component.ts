@@ -15,7 +15,7 @@ import { CoreService } from 'src/app/service/Core.service';
 })
 export class CandidateListComponent {
   displayedColumns: string[] = [
-    'id',
+    'no',
     'name',
     'email',
     'phone',

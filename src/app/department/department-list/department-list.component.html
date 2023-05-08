@@ -30,13 +30,13 @@
         matSort
         matSortStart="desc"
       >
-        <ng-container matColumnDef="id">
+        <ng-container matColumnDef="no">
           <mat-header-cell *matHeaderCellDef mat-sort-header
-            >ID</mat-header-cell
+            >No</mat-header-cell
           >
-          <mat-cell *matCellDef="let data">
-            {{ data?.id }}
-          </mat-cell>
+          <mat-cell *matCellDef="let element; let i = index">
+          {{ i + 1 }}
+        </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="name">
@@ -49,14 +49,14 @@
         </ng-container>
 
 
-        <!-- <ng-container matColumnDef="company">
+        <ng-container matColumnDef="companyName">
           <mat-header-cell *matHeaderCellDef mat-sort-header
-            >Company</mat-header-cell
+            >Company Name</mat-header-cell
           >
           <mat-cell *matCellDef="let data">
             {{ data?.company?.name }}
           </mat-cell>
-        </ng-container> -->
+        </ng-container>
 
         <ng-container matColumnDef="actions">
           <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>

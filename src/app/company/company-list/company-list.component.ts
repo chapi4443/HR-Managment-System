@@ -14,7 +14,7 @@ import { CompanyAddComponent } from '../company-add/company-add.component';
   styleUrls: ['./company-list.component.scss'],
 })
 export class CompanyListComponent {
-  displayedColumns: string[] = ['id', 'name', 'phone', 'address', 'actions'];
+  displayedColumns: string[] = ['no', 'name', 'phone', 'address', 'actions'];
   dataSource!: MatTableDataSource<Company>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

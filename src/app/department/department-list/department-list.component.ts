@@ -14,7 +14,7 @@ import { DepartmentAddComponent } from '../department-add/department-add.compone
   styleUrls: ['./department-list.component.scss'],
 })
 export class DepartmentListComponent {
-  displayedColumns: string[] = ['id', 'name', 'actions'];
+  displayedColumns: string[] = ['no', 'name','companyName', 'actions'];
   dataSource!: MatTableDataSource<Department>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
