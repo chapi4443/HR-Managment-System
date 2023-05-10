@@ -84,41 +84,66 @@
       "id": 5,
       "companyId": 3,
       "name": "Nevada Mejia"
+    },
+    {
+      "id": 6,
+      "companyId": 1,
+      "name": "Siyam Mohammed"
     }
   ],
   "employees": [
     {
       "id": 1,
-      "name": "Bob Johnson",
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "gender": "Male",
       "email": "bob.johnson@example.com",
       "phone": "555-555-5555",
+      "hiredDate": "2023-05-07T21:00:00.000Z",
       "address": "987 Pine St",
-      "companyId": 1
+      "departmentId": 1
     },
     {
-      "id": 2,
-      "companyId": 1,
-      "name": "yene balnn",
-      "email": "siyammoh11@gmail.com",
-      "phone": "0911908834",
-      "address": "b"
+      "id": 3,
+      "departmentId": 1,
+      "firstName": "vvv",
+      "lastName": "jjjj",
+      "gender": "Female",
+      "email": "kyduv@mailinator.com",
+      "hiredDate": "2023-05-07T21:00:00.000Z",
+      "phone": "+1 (371) 794-2366",
+      "address": "Quidem voluptate vol"
+    },
+    {
+      "id": 5,
+      "departmentId": 3,
+      "firstName": "Azalia",
+      "lastName": "Lindsay",
+      "gender": "female",
+      "email": "vimytyvu@mailinator.com",
+      "hiredDate": "2023-05-07T21:00:00.000Z",
+      "phone": "+1 (354) 919-9982",
+      "address": "Labore aut hic amet"
     }
   ],
   "salaries": [
     {
       "id": 1,
       "amount": 50000,
+      "bonus": 500,
       "employeeId": 1
     },
     {
       "id": 6,
       "employeeId": 1,
-      "amount": "789"
+      "amount": "789",
+      "bonus": 500
     },
     {
       "id": 7,
-      "employeeId": 2,
-      "amount": "022"
+      "employeeId": 3,
+      "amount": "7777",
+      "bonus": 0
     }
   ]
 }

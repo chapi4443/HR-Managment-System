@@ -15,40 +15,78 @@
     <form [formGroup]="formGroup" autocomplete="off">
       <div fxLayout="row wrap" fxLayoutGap="2em">
         <mat-form-field fxFlex appearance="outline">
-          <mat-label>Company</mat-label>
-          <mat-select
-            matInput
-            name="companyId"
-            formControlName="companyId"
-            required
-          >
-            <mat-option>---select---</mat-option>
-            <mat-option *ngFor="let item of companies" [value]="item.id">
-              {{ item.name }}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="companyId?.hasError('required')">
-            Company is required
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div fxLayout="row wrap" fxLayoutGap="2em">
-        <mat-form-field fxFlex appearance="outline">
-          <mat-label>Name</mat-label>
+          <mat-label>First Name</mat-label>
           <input
             matInput
             type="text"
-            id="name"
-            formControlName="name"
+            id="firstName"
+            formControlName="firstName"
             required
           />
-          <mat-error *ngIf="name?.hasError('required')">
-            Name is required
+          <mat-error *ngIf="firstName?.hasError('required')">
+            First name is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input
+            matInput
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            required
+          />
+          <mat-error *ngIf="lastName?.hasError('required')">
+            Last name is required
           </mat-error>
         </mat-form-field>
       </div>
       <div fxLayout="row wrap" fxLayoutGap="2em">
         <mat-form-field fxFlex appearance="outline">
+          <mat-label>Gender</mat-label>
+          <mat-select matInput name="gender" formControlName="gender" required>
+            <mat-option>---select---</mat-option>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="others">Others</mat-option>
+          </mat-select>
+          <mat-error *ngIf="gender?.hasError('required')">
+            Gender is required
+          </mat-error>
+        </mat-form-field> <mat-form-field fxFlex appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input
+            matInput
+            type="text"
+            id="phone"
+            formControlName="phone"
+            required
+          />
+          <mat-error *ngIf="phone?.hasError('required')">
+            Phone is required
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="2em">
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Department</mat-label>
+          <mat-select
+            matInput
+            name="departmentId"
+            formControlName="departmentId"
+            required
+          >
+            <mat-option>---select---</mat-option>
+            <mat-option *ngFor="let item of departments" [value]="item.id">
+              {{ item.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="departmentId?.hasError('required')">
+            Department is required
+          </mat-error>
+        </mat-form-field>
+           <mat-form-field fxFlex appearance="outline">
           <mat-label>Email</mat-label>
           <input
             matInput
@@ -63,19 +101,26 @@
         </mat-form-field>
       </div>
       <div fxLayout="row wrap" fxLayoutGap="2em">
-        <mat-form-field fxFlex appearance="outline">
-          <mat-label>Phone</mat-label>
+         <mat-form-field fxFlex appearance="outline">
+          <mat-label>Hired Date</mat-label>
           <input
+            autocomplete="off"
             matInput
             type="text"
-            id="phone"
-            formControlName="phone"
+            [matDatepicker]="date"
+            [max]="minDate"
+            formControlName="hiredDate"
             required
+            (click)="date.open()"
+            readonly
           />
-          <mat-error *ngIf="phone?.hasError('required')">
-            Phone is required
+          <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+          <mat-datepicker #date></mat-datepicker>
+          <mat-error *ngIf="hiredDate?.hasError('required')">
+            Hired Date is required
           </mat-error>
         </mat-form-field>
+
         <mat-form-field fxFlex appearance="outline">
           <mat-label>Address</mat-label>
           <input
@@ -101,7 +146,7 @@
             [disabled]="!formGroup.valid"
             (click)="save()"
           >
-            <mat-label> Save </mat-label>
+            <mat-label> {{ data ? "Update" : "Save" }} </mat-label>
           </button>
         </div>
       </mat-card-actions>

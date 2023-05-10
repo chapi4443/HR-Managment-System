@@ -2,9 +2,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Company } from 'src/app/model/company.model';
+import { Department } from 'src/app/model/department.model';
 import { Employee } from 'src/app/model/employee.model';
 import { CoreService } from 'src/app/service/Core.service';
 import { CompanyService } from 'src/app/service/company.service';
+import { DepartmentService } from 'src/app/service/department.service';
 import { EmployeeService } from 'src/app/service/employee.service';
 
 @Component({
@@ -14,12 +16,13 @@ import { EmployeeService } from 'src/app/service/employee.service';
 })
 export class EmployeeAddComponent implements OnInit {
   formGroup: FormGroup;
-  companies: Company[];
+  departments: Department[];
+  minDate = new Date();
 
   constructor(
     private fb: FormBuilder,
     private service: EmployeeService,
-    private companyService: CompanyService,
+    private departmentService: DepartmentService,
     @Inject(MAT_DIALOG_DATA)
     public data: any,
     private _coreService: CoreService,
@@ -31,9 +34,12 @@ export class EmployeeAddComponent implements OnInit {
   private createForm() {
     this.formGroup = this.fb.group({
       id: [0],
-      companyId: [0, [Validators.required]],
-      name: ['', [Validators.required]],
+      departmentId: [0, [Validators.required]],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      gender: ['', [Validators.required]],
       email: ['', [Validators.required]],
+      hiredDate: [Date, [Validators.required]],
       phone: ['', [Validators.required]],
       address: ['', [Validators.required]],
     });
@@ -42,23 +48,32 @@ export class EmployeeAddComponent implements OnInit {
   ngOnInit() {
     this.formGroup.patchValue(this.data);
 
-    this.companyService.getCompanies().subscribe((res) => {
+    this.departmentService.getDepartments().subscribe((res) => {
       console.log(res);
-      this.companies = res;
+      this.departments = res;
     });
   }
 
-  get name() {
-    return this.formGroup.get('name');
+  get firstName() {
+    return this.formGroup.get('firstName');
   }
-  get companyId() {
-    return this.formGroup.get('companyId');
+  get lastName() {
+    return this.formGroup.get('lastName');
+  }
+  get gender() {
+    return this.formGroup.get('gender');
+  }
+  get departmentId() {
+    return this.formGroup.get('departmentId');
   }
   get email() {
     return this.formGroup.get('email');
   }
+  get hiredDate() {
+    return this.formGroup.get('email');
+  }
   get phone() {
-    return this.formGroup.get('phone');
+    return this.formGroup.get('hiredDate');
   }
   get address() {
     return this.formGroup.get('address');

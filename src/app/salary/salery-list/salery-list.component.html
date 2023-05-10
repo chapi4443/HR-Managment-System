@@ -39,6 +39,17 @@
         </mat-cell>
         </ng-container>
 
+
+
+        <ng-container matColumnDef="employeeName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Employee Name</mat-header-cell
+          >
+          <mat-cell *matCellDef="let data">
+            {{ data?.employee?.firstName }}  {{ data?.employee?.lastName }}
+          </mat-cell>
+        </ng-container>
+
         <ng-container matColumnDef="amount">
           <mat-header-cell *matHeaderCellDef mat-sort-header
             >Amount</mat-header-cell
@@ -48,13 +59,12 @@
           </mat-cell>
         </ng-container>
 
-
-        <ng-container matColumnDef="employeeName">
+        <ng-container matColumnDef="bonus">
           <mat-header-cell *matHeaderCellDef mat-sort-header
-            >Employee Name</mat-header-cell
+            >Bonus</mat-header-cell
           >
           <mat-cell *matCellDef="let data">
-            {{ data?.employee?.name }}
+            {{ data?.bonus }}
           </mat-cell>
         </ng-container>
 

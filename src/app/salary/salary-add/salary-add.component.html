@@ -25,7 +25,7 @@
           >
             <mat-option>---select---</mat-option>
             <mat-option *ngFor="let item of employees" [value]="item.id">
-              {{ item.name }}
+              {{ item?.firstName }} {{ item?.lastName }}
             </mat-option>
           </mat-select>
           <mat-error *ngIf="employeeId?.hasError('required')">
@@ -46,6 +46,18 @@
           <mat-error *ngIf="amount?.hasError('required')">
             Amount is required
           </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row wrap" fxLayoutGap="2em">
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Bonus</mat-label>
+          <input
+            matInput
+            type="text"
+            id="bonus"
+            formControlName="bonus"
+          />
         </mat-form-field>
       </div>
       <mat-card-actions align="end">

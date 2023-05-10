@@ -27,6 +27,7 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { CompanyListComponent } from './company/company-list/company-list.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { SaleryListComponent } from './salary/salery-list/salery-list.component';
+import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CandidateAddComponent } from './candidate/candidate-add/candidate-add.component';
 import { CompanyAddComponent } from './company/company-add/company-add.component';
@@ -63,6 +64,7 @@ import { SalaryAddComponent } from './salary/salary-add/salary-add.component';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,

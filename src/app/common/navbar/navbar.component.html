@@ -1,10 +1,27 @@
 <mat-toolbar color="primary">
-  <span>HR Managment System</span>
+  <a routerLink="/candidates">HR Management System</a>
   <span fxFlex></span>
-  <a mat-button routerLink="/candidates">Candidates</a>
-  <a mat-button routerLink="/companies">Companies</a>
-  <a mat-button routerLink="/departments">Departments</a>
-  <a mat-button routerLink="/employees">Employees</a>
-  <a mat-button routerLink="/salaries">Salaries</a>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="matMenu" *ngIf="(isSmallScreen$ | async)">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div fxLayout="row" fxHide.xs="true" fxHide.gt-xs="false">
+    <a mat-button routerLink="/candidates">Candidates</a>
+    <a mat-button routerLink="/companies">Companies</a>
+    <a mat-button routerLink="/departments">Departments</a>
+    <a mat-button routerLink="/employees">Employees</a>
+    <a mat-button routerLink="/salaries">Salaries</a>
+  </div>
+  <mat-menu #menu="matMenu" fxHide.gt-xs="true">
+    <a mat-menu-item routerLink="/candidates" [ngStyle]="{'color': (isSmallScreen$ | async) ? 'black' : ''}">Candidates</a>
+    <a mat-menu-item routerLink="/companies" [ngStyle]="{'color': (isSmallScreen$ | async) ? 'black' : ''}">Companies</a>
+    <a mat-menu-item routerLink="/departments" [ngStyle]="{'color': (isSmallScreen$ | async) ? 'black' : ''}">Departments</a>
+    <a mat-menu-item routerLink="/employees" [ngStyle]="{'color': (isSmallScreen$ | async) ? 'black' : ''}">Employees</a>
+    <a mat-menu-item routerLink="/salaries" [ngStyle]="{'color': (isSmallScreen$ | async) ? 'black' : ''}">Salaries</a>
+  </mat-menu>
 </mat-toolbar>
-<router-outlet></router-outlet>
+
+
+
+
+    <router-outlet></router-outlet>
+

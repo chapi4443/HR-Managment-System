@@ -17,10 +17,12 @@ export class EmployeeListComponent {
   displayedColumns: string[] = [
     'no',
     'name',
-    'companyName',
+    'gender',
+    'departmentName',
     'email',
     'phone',
     'address',
+    'hiredate',
     'actions',
   ];
   dataSource!: MatTableDataSource<Employee>;

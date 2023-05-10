@@ -16,7 +16,7 @@ export class EmployeeService {
   // }
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(this.employeesUrl, {
-      params: { _expand: 'company' },
+      params: { _expand: 'department' },
     });
   }
 

@@ -32,6 +32,7 @@ export class SalaryAddComponent implements OnInit {
       id: [0],
       employeeId: [0, [Validators.required]],
       amount: [0, [Validators.required]],
+      bonus: [0],
     });
   }
 
@@ -49,6 +50,9 @@ export class SalaryAddComponent implements OnInit {
   }
   get amount() {
     return this.formGroup.get('amount');
+  }
+  get bonus() {
+    return this.formGroup.get('bonus');
   }
 
   clear() {

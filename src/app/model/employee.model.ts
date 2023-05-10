@@ -1,12 +1,16 @@
 import { Company } from "./company.model";
+import { Department } from "./department.model";
 
 export class Employee {
-    id: number;
-    name: string;
-    email:string;
-    salary: number;
-    phone:string;
-    address: number;
-    companyId:number;
-    company?: Company;
+  id: number;
+  firstName: string;
+  lastName: string;
+  gender: string;
+  email: string;
+  salary: number;
+  phone: string;
+  hiredDate: Date;
+  address: number;
+  departmentId: number;
+  department?: Department;
 }

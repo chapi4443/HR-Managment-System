@@ -41,22 +41,31 @@
 
         <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef mat-sort-header
-            >Name</mat-header-cell
+            >Full Name</mat-header-cell
           >
           <mat-cell *matCellDef="let data">
-            {{ data?.name }}
+            {{ data?.firstName }} {{ data?.lastName }}
           </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="companyName">
+        <ng-container matColumnDef="gender">
           <mat-header-cell *matHeaderCellDef mat-sort-header
-            >Company Name</mat-header-cell
+            >Gender</mat-header-cell
           >
           <mat-cell *matCellDef="let data">
-            {{ data?.company?.name }}
+            {{ data?.gender }}
           </mat-cell>
         </ng-container>
-        
+
+        <ng-container matColumnDef="departmentName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Department</mat-header-cell
+          >
+          <mat-cell *matCellDef="let data">
+            {{ data?.department?.name }}
+          </mat-cell>
+        </ng-container>
+
         <ng-container matColumnDef="email">
           <mat-header-cell *matHeaderCellDef mat-sort-header
             >Email</mat-header-cell
@@ -81,6 +90,15 @@
           >
           <mat-cell *matCellDef="let data">
             {{ data?.address }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="hiredate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Hired Date</mat-header-cell
+          >
+          <mat-cell *matCellDef="let data">
+            {{ data?.hiredDate | date }}
           </mat-cell>
         </ng-container>
 
